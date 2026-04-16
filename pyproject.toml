@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-infostat"
+version = "0.1.0"
+description = "Servidor MCP local para automatizacion de InfoStat 2008"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+  { name = "MCP-Infostat Team" }
+]
+dependencies = [
+  "mcp[cli]>=1.0.0",
+  "pydantic>=2.7.0",
+  "tomli>=2.0.1; python_version < '3.11'",
+  "pywinauto>=0.6.8",
+  "pywin32>=306"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "pytest-mock>=3.14.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.setuptools]
+packages = ["mcp_infostat", "mcp_infostat.ui", "mcp_infostat.results"]

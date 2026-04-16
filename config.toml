@@ -1,0 +1,19 @@
+[infostat]
+exe_path = "C:/Program Files/InfoStat/InfoStat.exe"
+version = "InfoStat 2008"
+
+[paths]
+data_base_dir = "./data"
+results_base_dir = "./results"
+
+[timeouts]
+launch_seconds = 30
+dialog_appear_seconds = 10
+analysis_complete_seconds = 120
+
+[mcp]
+transport = "stdio"
+
+[security]
+allowed_extensions = [".csv", ".txt", ".xls", ".xlsx", ".dbf"]
+max_file_size_mb = 100
