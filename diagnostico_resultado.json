@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-04-16T20:26:00",
+  "seccion_1_python": {
+    "venv_existe": true,
+    "python_version": "3.14.4",
+    "dependencias_ok": true,
+    "server_importa": true,
+    "tests_passed": 7,
+    "tests_failed": 0
+  },
+  "seccion_2_infostat": {
+    "exe_encontrado": true,
+    "ruta_real": "C:/Program Files (x86)/InfoStat/InfoStat.exe",
+    "archivos_ini": [],
+    "archivos_resultados_previos": [
+      "C:/Users/zappa/Desktop/NKC2026/.mixin.out"
+    ],
+    "extensiones_resultados": [
+      ".out"
+    ]
+  },
+  "seccion_3_automatizacion": {
+    "pywinauto_disponible": true,
+    "pywin32_disponible": true,
+    "infostat_lanza": true,
+    "backend_exitoso": "uia",
+    "titulos_ventanas": [
+      "Acerca de..."
+    ],
+    "clases_ventanas": [
+      "TStartUpScreen"
+    ],
+    "menu_accesible": false,
+    "items_menu_principal": []
+  },
+  "seccion_4_config": {
+    "exe_path_configurado": true,
+    "exe_path_existe": true,
+    "data_dir_existe": true,
+    "results_dir_existe": true
+  },
+  "seccion_5_compatibilidad": {
+    "fecha_objetivo_descarga": "2020-09-29",
+    "fecha_exe": "2020-09-29 12:22:50",
+    "product_version": "5.13.1",
+    "file_version": "0.1.0.0",
+    "sha256": "B8989369B09BDADA1356B000D503588C507486D5ECED1B932CE5FB645BF883DA",
+    "sha1": "005C57F9D399CA9D360802E76251B9204F4FA6EF",
+    "firma_digital_valida": false,
+    "estado_firma": "NotSigned",
+    "arquitectura_infostat": "x86",
+    "arquitectura_python": "x64",
+    "compatibilidad_arquitectura": false,
+    "eventlog_errores_runtime_30d": 0,
+    "version_msi_registrada": [
+      "2017.1.2"
+    ],
+    "riesgo_version_instalador": true,
+    "estructura_instalacion_esperada": true,
+    "directorios_esperados": [
+      "Data",
+      "Datos",
+      "Help",
+      "recursos",
+      "RScripts_esp",
+      "RSources"
+    ],
+    "riesgo_diferencia_manual_2008": true,
+    "incompatibilidades_detectadas": [
+      "InfoStat x86 con Python x64 para automatizacion UI",
+      "Version del binario (5.13.1) diferente al manual base InfoStat 2008",
+      "Version MSI registrada (2017.1.2) difiere del product_version del ejecutable (5.13.1)",
+      "Ejecutable sin firma digital"
+    ]
+  },
+  "decision": "BLOQUE A con estrategia teclado (Alt+F, SendKeys)"
+}

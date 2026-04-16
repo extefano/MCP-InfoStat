@@ -1,0 +1,110 @@
+﻿=============================================
+MCP-InfoStat -- Diagnostico Automatico
+Inicio: 2026-04-16 20:25:26
+=============================================
+
+[SECCION 1] Entorno Python
+---
+S1.1 PASS: venv encontrado en .\.venv\Scripts\python.exe
+S1.2 Python 3.14.4
+S1.3 PASS: dependencias core ok
+S1.4 PASS: server.py importa sin errores
+S1.5 Suite de tests:
+  ============================= test session starts =============================
+  platform win32 -- Python 3.14.4, pytest-9.0.3, pluggy-1.6.0 -- c:\Users\zappa\MCP-Infostat\.venv\Scripts\python.exe
+  cachedir: .pytest_cache
+  rootdir: C:\Users\zappa\MCP-Infostat
+  configfile: pyproject.toml
+  plugins: anyio-4.13.0, mock-3.15.1
+  collecting ... collected 7 items
+  
+  tests/test_security.py::test_validate_input_path_accepts_file_inside_base PASSED [ 14%]
+  tests/test_security.py::test_validate_input_path_rejects_outside_base PASSED [ 28%]
+  tests/test_security.py::test_validate_input_path_rejects_extension PASSED [ 42%]
+  tests/test_session.py::test_launch_status_close_cycle PASSED             [ 57%]
+  tests/test_session.py::test_data_load_and_get_info_csv PASSED            [ 71%]
+  tests/test_session.py::test_data_load_requires_active_session PASSED     [ 85%]
+  tests/test_utils.py::test_build_response_success_shape PASSED            [100%]
+  
+  ============================== 7 passed in 0.85s ==============================
+
+[SECCION 2] InfoStat instalado
+---
+S2.1 PASS: InfoStat.exe encontrado
+  Tamanio: 68343481 bytes
+  Modificado: 09/29/2020 12:22:50
+S2.2 Contenido carpeta InfoStat:
+  Microsoft.PowerShell.Commands.Internal.Format.FormatStartData
+  Microsoft.PowerShell.Commands.Internal.Format.GroupStartData
+  Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData
+  Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData
+  Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData
+  Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData
+  Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData
+  Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData
+  Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData
+  Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData
+  Microsoft.PowerShell.Commands.Internal.Format.FormatEntryData
+  Microsoft.PowerShell.Commands.Internal.Format.GroupEndData
+  Microsoft.PowerShell.Commands.Internal.Format.FormatEndData
+S2.3 Archivos INI/CFG de InfoStat:
+  ausente: C:\Program Files (x86)\InfoStat\InfoStat.ini
+  ausente: C:\Program Files (x86)\InfoStat\InfoStat.cfg
+  ausente: C:\Users\zappa\AppData\Roaming\InfoStat\InfoStat.ini
+  ausente: C:\Users\zappa\AppData\Local\InfoStat\InfoStat.ini
+S2.4 Archivos de resultados previos de InfoStat:
+  RESULTADO_PREVIO: C:\Users\zappa\Desktop\NKC2026\.mixin.out (1 bytes)
+
+[SECCION 3] Automatizacion UI
+---
+S3.1 PASS: pywinauto disponible (0.6.9)
+S3.2 PASS: pywin32 disponible
+S3.3 Prueba de lanzamiento (espera 5s)...
+  PASS:pid=32168
+S3.4 Deteccion de ventana pywinauto (espera 8s)...
+  PASS:backend=uia:ventanas=1
+    VENTANA:titulo='Acerca de...'|clase='TStartUpScreen'
+S3.5 Inspeccion de menu principal (espera 8s)...
+  INFO:backend_menu=uia
+  WARN:menu_no_detectado_en_descendants
+  INFO:hijos_ventana=1
+    HIJO:Pane|''
+
+[SECCION 4] Configuracion config.toml
+---
+  PASS:exe_path=C:/Program Files (x86)/InfoStat/InfoStat.exe
+  PASS:data_base_dir=./data
+  PASS:results_base_dir=./results
+
+[SECCION 5] Compatibilidad instalacion InfoStat 2020
+---
+S5.1 PASS: product_version=5.13.1 | file_version=0.1.0.0
+S5.2 PASS: fecha de compilacion/localizacion coincide con 2020-09-29
+S5.3 WARN: InfoStat x86 con Python x64 (pywinauto puede ser inestable)
+S5.4 WARN: ejecutable sin firma valida (NotSigned)
+S5.5 PASS: estructura de instalacion esperada presente
+S5.6 PASS: sin errores de runtime de InfoStat en EventLog (30 dias)
+S5.7 WARN: el manual base es InfoStat 2008, pero el binario reporta version 5.13.1
+S5.8 INFO: version MSI registrada=2017.1.2
+S5.9 WARN: version MSI y product_version del ejecutable no coinciden
+
+=============================================
+RESUMEN PARA DECISION DE BLOQUE
+=============================================
+Tests suite ok   : True
+InfoStat exe ok  : True
+InfoStat lanza   : True
+Backend UI ok    : True
+Menu accesible   : False
+Compat arch ok   : False
+Version doc risk : True
+Runtime errors30d: 0
+Installer ver risk: True
+
+DECISION:
+  => BLOQUE A con estrategia teclado (Alt+F, SendKeys).
+  !! NOTA_COMPAT: revisar x86/x64, diferencias con manual 2008 y version MSI registrada.
+
+Fin diagnostico: 2026-04-16 20:26:00
+Log guardado en: diagnostico_log.txt (si usaste Tee-Object)
+
